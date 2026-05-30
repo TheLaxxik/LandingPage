@@ -1,0 +1,38 @@
+---
+interface Props {
+	eyebrow: string;
+	title: string;
+	description?: string;
+	align?: 'center' | 'left';
+}
+
+const { eyebrow, title, description, align = 'center' } = Astro.props;
+const isCentered = align === 'center';
+---
+
+<section
+	class="relative overflow-hidden border-b border-slate-100 bg-white py-20 sm:py-28 dark:border-neutral-800 dark:bg-black"
+>
+	<div
+		class="pointer-events-none absolute -top-24 left-1/2 h-64 w-[32rem] -translate-x-1/2 rounded-full bg-blue-500/5 blur-3xl dark:bg-accent-warm/5"
+		aria-hidden="true"
+	/>
+	<div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class:list={['max-w-3xl', isCentered && 'mx-auto text-center']}>
+			<p class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-accent-warm">{eyebrow}</p>
+			<h1
+				class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-tight dark:text-white"
+			>
+				{title}
+			</h1>
+			{
+				description && (
+					<p class="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-neutral-400">
+						{description}
+					</p>
+				)
+			}
+			<slot />
+		</div>
+	</div>
+</section>

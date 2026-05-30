@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="sk">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/taskflow-favicon.svg?v=2" />
+		<link rel="icon" href="/taskflow-favicon.svg?v=2" />
+		<title>TaskFlow AI | AI projektový nástroj</title>
+	</head>
+	<body class="overflow-x-hidden bg-slate-950 text-slate-50 antialiased scroll-smooth">
+		<Navbar />
+		<Hero />
+		<section id="funkcie">
+			<Features />
+		</section>
+		<section id="cennik">
+			<Pricing />
+		</section>
+		<section id="faq">
+			<FAQ />
+		</section>
+		<Footer />
+	</body>
+</html>

@@ -45,7 +45,7 @@ const faqs = [
 						<button
 							type="button"
 							class="faq-trigger flex w-full items-center justify-between gap-3 px-4 py-4 text-left sm:gap-4 sm:px-6 sm:py-5"
-							aria-expanded={index === 0 ? 'true' : 'false'}
+							aria-expanded="false"
 							aria-controls={`faq-answer-${index}`}
 							id={`faq-trigger-${index}`}
 						>
@@ -64,7 +64,7 @@ const faqs = [
 					<div
 						id={`faq-answer-${index}`}
 						class="faq-panel overflow-hidden transition-[max-height,opacity] duration-300 ease-out"
-						style={`max-block-size: ${index === 0 ? '160px' : '0px'}; opacity: ${index === 0 ? '1' : '0'};`}
+						style="max-block-size: 0px; opacity: 0;"
 						role="region"
 						aria-labelledby={`faq-trigger-${index}`}
 					>
